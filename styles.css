@@ -583,29 +583,9 @@ h1 span {
   font-size: clamp(1.45rem, 3vw, 2.2rem);
 }
 
-.early-grid article > p:not(.career-period, .career-title, .career-outcome),
+.early-grid article > p:not(.career-period, .career-title),
 .education-grid article > p:not(.career-period) {
   color: var(--ink-soft);
-}
-
-.career-outcome {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.75rem;
-  align-items: baseline;
-  margin: 1.5rem 0 0;
-}
-
-.career-outcome strong {
-  color: var(--label-ink);
-  font-size: 1.4rem;
-}
-
-.career-outcome span {
-  color: var(--ink-soft);
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
 }
 
 .selected-work {
