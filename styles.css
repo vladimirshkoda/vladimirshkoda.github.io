@@ -227,11 +227,12 @@ h1 span {
 }
 
 .scope-card {
+  position: relative;
   max-width: var(--content-width);
   width: calc(100% - 2 * var(--gutter));
   margin: 0 auto 2.5rem;
-  padding: 1rem 0;
-  border-top: 3px double var(--ink);
+  padding: 1rem;
+  border: 1px solid var(--line);
 }
 
 .scope-titlebar {
@@ -252,21 +253,28 @@ h1 span {
   align-items: center;
 }
 
-.particle-figure {
+.hero-portrait {
+  width: min(100%, 20rem);
   min-width: 0;
-  margin: 0;
+  justify-self: end;
 }
 
-.particle-stage {
+.portrait-frame {
   position: relative;
-  aspect-ratio: 1;
-  background-image: linear-gradient(#21201c08 1px, transparent 1px), linear-gradient(90deg, #21201c08 1px, transparent 1px);
-  background-size: 24px 24px;
+  margin: 0;
   border: 1px solid var(--line);
 }
 
-.particle-stage::before,
-.particle-stage::after {
+.portrait-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.scope-card::before,
+.scope-card::after,
+.portrait-frame::before,
+.portrait-frame::after {
   position: absolute;
   width: 16px;
   height: 16px;
@@ -276,27 +284,18 @@ h1 span {
   pointer-events: none;
 }
 
-.particle-stage::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
-.particle-stage::after { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
-
-#particle-sphere { display: block; width: 100%; height: 100%; }
-
-.motion-toggle {
-  display: block;
-  margin: 0.7rem 0 0 auto;
-  padding: 0.4rem 0.6rem;
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--ink-soft);
-  font: 400 11px / 1.6 var(--mono);
-  cursor: pointer;
+.scope-card::before,
+.portrait-frame::before {
+  top: -1px;
+  left: -1px;
+  border-width: 1px 0 0 1px;
 }
 
-.motion-toggle[hidden] { display: none; }
-
-.motion-toggle:hover {
-  border-color: var(--action);
-  color: var(--action);
+.scope-card::after,
+.portrait-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 1px 1px 0;
 }
 
 .eyebrow,
@@ -864,9 +863,8 @@ footer p {
     gap: 1.25rem;
   }
 
-  .particle-figure {
-    width: 100%;
-    max-width: 24rem;
+  .hero-portrait {
+    width: min(100%, 72vw, 18rem);
     justify-self: center;
   }
 
@@ -951,7 +949,7 @@ footer p {
 
   .site-header,
   .hero-actions,
-  .particle-figure,
+  .hero-portrait,
   .signal-strip,
   footer {
     display: none;
