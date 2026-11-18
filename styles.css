@@ -537,6 +537,10 @@ h1 span {
   line-height: 1;
 }
 
+.early-grid .career-metrics strong {
+  font-size: 1.625rem;
+}
+
 .career-metrics span {
   margin-top: 0.45rem;
   color: var(--ink-soft);
@@ -826,8 +830,21 @@ footer p {
 
   .hero {
     grid-template-columns: 1fr;
-    min-height: auto;
-    padding: 2.75rem var(--gutter) 3rem;
+    gap: 1.5rem;
+    padding: 1.75rem var(--gutter) 2rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-actions .button {
+    padding: 0.45rem 0.3rem;
+    text-align: center;
+    text-wrap: balance;
   }
 
   h1 {
@@ -843,13 +860,42 @@ footer p {
     gap: 1.25rem;
   }
 
+  .scope-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
   .hero-portrait {
-    width: min(100%, 72vw, 18rem);
+    grid-row: 1;
+    width: min(100%, 60vw, 16rem);
     justify-self: center;
   }
 
   .signal-strip {
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-inline: var(--gutter);
+    white-space: normal;
+  }
+
+  .signal-strip span {
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.5rem;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .signal-strip span:nth-child(odd) {
+    border-right: 1px solid var(--line);
+  }
+
+  .signal-strip span:nth-child(n + 3) {
+    border-top: 1px solid var(--line);
+  }
+
+  .signal-strip span:not(:last-child)::after {
+    content: none;
   }
 
   .section-heading,
