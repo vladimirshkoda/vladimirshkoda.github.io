@@ -7,12 +7,19 @@
       name="description"
       content="Volodya Shkoda is a Senior Engineering Manager focused on platform modernization, engineering leadership, and business-critical systems."
     />
-    <meta name="theme-color" content="#101827" />
+    <meta name="theme-color" content="#f5f3eb" />
     <title>Volodya Shkoda — Senior Engineering Manager</title>
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101827'/%3E%3Cpath d='M15 18h9l8 26 8-26h9L37 51H27L15 18Z' fill='%23c7f36b'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2321201c'/%3E%3Cpath d='M15 18h9l8 26 8-26h9L37 51H27L15 18Z' fill='%23f8f7ee'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif&amp;family=Inter:wght@400..850&amp;display=swap"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -48,14 +55,25 @@
             modernization work into valuable, releasable increments.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#experience">Explore my work</a>
-            <a class="button button-secondary" href="volodya-shkoda-resume.pdf" download>Download résumé</a>
+            <a class="button button-secondary" href="#experience">Explore my work</a>
+            <a class="button button-primary" href="volodya-shkoda-resume.pdf" download>Download résumé</a>
             <a class="button button-secondary" href="mailto:vladimir.shkoda.51@gmail.com">Get in touch</a>
           </div>
         </div>
 
-        <aside class="scope-card" aria-label="Current leadership scope">
+        <figure class="particle-figure" aria-label="Decorative rotating particle sphere">
+          <div class="particle-stage">
+            <canvas id="particle-sphere" aria-hidden="true"></canvas>
+          </div>
+          <button class="motion-toggle" type="button" hidden>Pause motion</button>
+        </figure>
+      </section>
+
+      <aside class="scope-card" aria-label="Current leadership scope">
+        <div class="scope-titlebar">
           <p class="scope-label">Current scope</p>
+        </div>
+        <div class="scope-content">
           <div class="scope-grid">
             <div>
               <strong>31</strong>
@@ -77,8 +95,8 @@
           <p class="scope-note">
             Payment processing, subscriptions, product catalog, entitlements, and commerce experiences.
           </p>
-        </aside>
-      </section>
+        </div>
+      </aside>
 
       <section class="signal-strip" aria-label="Leadership focus">
         <span>Engineering leadership</span>
@@ -385,6 +403,8 @@
       <p>Volodya Shkoda <span aria-hidden="true">·</span> Barcelona, Spain</p>
       <p>© 2026</p>
     </footer>
+
+    <script src="particles.js" defer></script>
 
     <!-- Cloudflare Web Analytics -->
     <script
